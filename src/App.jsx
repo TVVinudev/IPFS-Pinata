@@ -49,12 +49,12 @@ const App = () => {
       </form>
       {
         fileUrl && (
-          // <img 
-          //   src={fileUrl} 
-          //   alt="Preview" 
-          //   style={{ maxWidth: '100%', maxHeight: '300px' }} // images
-          // />
-         <a href={fileUrl}>PDF ViEW</a>// DOWNLOAD FILE (PDF,TXT etc.)
+          <img 
+            src={fileUrl} 
+            alt="Preview" 
+            style={{ maxWidth: '100%', maxHeight: '300px' }} // images
+          />
+          // <a href={fileUrl}>PDF ViEW</a>// DOWNLOAD FILE (PDF,TXT etc.)
 
         )
       }
