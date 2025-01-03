@@ -1,6 +1,9 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { Document } from 'react-pdf'
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const App = () => {
   const [file, setFile] = useState(null);
@@ -19,8 +22,8 @@ const App = () => {
         url: "https://api.pinata.cloud/pinning/pinFileToIPFS",
         data: fileData,
         headers: {
-          pinata_api_key: [process.env.API_KEY],
-          pinata_secret_api_key: [process.env.PRIVATE_KEY],
+          pinata_api_key: process.env.API_KEY,
+          pinata_secret_api_key: process.env.PRIVATE_KEY,
           "Content-Type": "multipart/form-data",
         }
       });
