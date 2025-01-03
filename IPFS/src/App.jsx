@@ -19,8 +19,8 @@ const App = () => {
         url: "https://api.pinata.cloud/pinning/pinFileToIPFS",
         data: fileData,
         headers: {
-          pinata_api_key: "e51b442ab588ab8a58e9",
-          pinata_secret_api_key: "9a802774ecbaa67a331c7d96774063329073fddce6e0fc03f1d7376dcb47dee8",
+          pinata_api_key: [process.env.API_KEY],
+          pinata_secret_api_key: [process.env.PRIVATE_KEY],
           "Content-Type": "multipart/form-data",
         }
       });
@@ -49,12 +49,12 @@ const App = () => {
       </form>
       {
         fileUrl && (
-          <img 
-            src={fileUrl} 
-            alt="Preview" 
-            style={{ maxWidth: '100%', maxHeight: '300px' }} // images
-          />
-          // <a href={fileUrl}>PDF ViEW</a>// DOWNLOAD FILE (PDF,TXT etc.)
+          // <img 
+          //   src={fileUrl} 
+          //   alt="Preview" 
+          //   style={{ maxWidth: '100%', maxHeight: '300px' }} // images
+          // />
+          <a href={fileUrl}>PDF ViEW</a>// DOWNLOAD FILE (PDF,TXT etc.)
 
         )
       }
